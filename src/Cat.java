@@ -3,10 +3,12 @@ import java.awt.Polygon;
 import java.util.ArrayList;
 
 public class Cat extends Actor {
+  public Cat(Cell inLoc, boolean isHuman) {
+    super(inLoc, Color.BLUE, isHuman, 2);
+  }
+
   // Cat design courtesy of Sawyer James Rush
-  public Cat(Cell inLoc) {
-    loc = inLoc;
-    color = Color.BLUE;
+  protected void setPoly() {
     display = new ArrayList<Polygon>();
     Polygon ear1 = new Polygon();
     ear1.addPoint(loc.x + 10, loc.y);

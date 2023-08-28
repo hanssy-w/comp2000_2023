@@ -3,10 +3,12 @@ import java.awt.Polygon;
 import java.util.ArrayList;
 
 public class Dog extends Actor {
+  public Dog(Cell inLoc, boolean isHuman) {
+    super(inLoc, Color.YELLOW, isHuman, 1);
+  }
+
   // Dog design courtesy of Sawyer James Rush
-  public Dog(Cell inLoc) {
-    loc = inLoc;
-    color = Color.YELLOW;
+  protected void setPoly() {
     display = new ArrayList<Polygon>();
     Polygon ear1 = new Polygon();
     ear1.addPoint(loc.x + 5, loc.y + 5);

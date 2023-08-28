@@ -3,10 +3,12 @@ import java.awt.Polygon;
 import java.util.ArrayList;
 
 public class Bird extends Actor {
+  public Bird(Cell inLoc, boolean isHuman) {
+    super(inLoc, Color.GREEN, isHuman, 3);
+  }
+
   // Bird design courtesy of Sawyer James Rush
-  public Bird(Cell inLoc) {
-    loc = inLoc;
-    color = Color.GREEN;
+  protected void setPoly() {
     display = new ArrayList<Polygon>();
     Polygon body = new Polygon();
     body.addPoint(loc.x + 7, loc.y + 7);
